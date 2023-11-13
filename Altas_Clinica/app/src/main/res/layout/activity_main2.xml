@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="CENTRO DE AYUDA PSICOLOGICA"
+        android:textColor="@color/azulbonito"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="Paciente"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Nombre completo"
+        android:gravity="center"
+        android:id="@+id/NombreUsuario"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Edad"
+        android:inputType="number"
+        android:id="@+id/EdadUsuario"/>
+
+    <RadioGroup
+        android:id="@+id/generoRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/hombreRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/mujerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mujer" />
+
+        <RadioButton
+            android:id="@+id/otroRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Otro" />
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Numero telefonico"
+        android:inputType="phone"
+        android:id="@+id/NumeroTelefonoUsuario"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Fecha de ingreso"
+        android:inputType="text"
+        android:id="@+id/FechaIngresoUsuario"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Razon de ingreso"
+        android:inputType="text"
+        android:id="@+id/RazonIngreso"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinnersito1"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Altas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulbonito"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:text="Altas"/>
+
+            <Button
+                android:id="@+id/Bajas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulbonito"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="Bajas"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Cambios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/azulbonito"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="Cambios"/>
+
+            <Button
+                android:id="@+id/Consultas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulbonito"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="Consultas"/>
+        </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="53dp" />
+
+    <Button
+        android:id="@+id/RegresarInicioDesdeUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="@color/azulbonito"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Regresar"/>
+
+</LinearLayout>
