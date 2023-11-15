@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity implements View.OnClickListener {
     EditText EditaditoPsicologos;
-    Button SubirPsicologo;
+    Button SubirPsicologo, regresadito;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,9 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
         SubirPsicologo = findViewById(R.id.subirPsicologo);
         SubirPsicologo.setOnClickListener(this);
+
+        regresadito = findViewById(R.id.RegresarInicioDesdePsicologos);
+        regresadito.setOnClickListener(this);
     }
 
     @Override

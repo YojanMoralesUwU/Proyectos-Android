@@ -18,7 +18,7 @@ import android.widget.Button;
         psicologos.setOnClickListener(this);
 
         usuarios = findViewById(R.id.Usuarios);
-        psicologos.setOnClickListener(this);
+        usuarios.setOnClickListener(this);
 
 
     }
