@@ -41,6 +41,9 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         }else if (cadenita.equals("Regresar")){
             Intent irInicio = new Intent(this,MainActivity.class);
             startActivity(irInicio);
+        }else if (cadenita.equals("Consultas")){
+            Intent irConsult = new Intent(this,Consultas.class);
+            startActivity(irConsult);
         }
     }
 }

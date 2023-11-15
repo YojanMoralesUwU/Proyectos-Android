@@ -82,6 +82,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         String cadenita = ((Button)view).getText().toString();
         if (cadenita.equals("Regresadito")){
             Intent regreso = new Intent(this,MainActivity2.class);
+            startActivity(regreso);
         } else if (cadenita.equals("Subir")){
             BasesitaUsuarios admin = new BasesitaUsuarios(this, "administración",null,1);
             SQLiteDatabase basesita  = admin.getWritableDatabase();
