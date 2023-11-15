@@ -28,7 +28,7 @@ public class BasesitaUsuarios extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase baseClinicaUsuarios) {
         baseClinicaUsuarios.execSQL("create table pacien(pNum integer primary key, pNom text, " +
                             "pEdad int, pGen text, pTel text, " +
-                            "pFeIn text, pRaIn text, pPNom text, pPNum int)");
+                            "pFeIn text, pRaIn text, pPNom text)");
     }
 
     @Override

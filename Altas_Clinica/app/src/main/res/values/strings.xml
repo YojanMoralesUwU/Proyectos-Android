@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="units">
+        <item>Selecciona</item>
+        <item>Psicologos</item>
+        <item>Psiquiatras</item>
+    </string-array>
+
+    <string-array name="Psicologos">
+        <item>Armando Fuentes</item>
+        <item>Jorge Morales</item>
+        <item>Axel Maldonado</item>
+    </string-array>
+
+    <string-array name="Psiquiatras">
+        <item>Luis Frias</item>
+        <item>Fernando Mendoza</item>
+    </string-array>
+
+    <string name="tittle_activity_ain4">MainActivity4</string>
 </resources>

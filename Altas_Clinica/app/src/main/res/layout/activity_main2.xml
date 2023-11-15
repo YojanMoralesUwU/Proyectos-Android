@@ -24,89 +24,12 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
-    <EditText
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Nombre completo"
-        android:gravity="center"
-        android:id="@+id/NombreUsuario"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:digits="0123456789."
-        android:gravity="center"
-        android:hint="Edad"
-        android:inputType="number"
-        android:id="@+id/EdadUsuario"/>
-
-    <RadioGroup
-        android:id="@+id/generoRadioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <RadioButton
-            android:id="@+id/hombreRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hombre" />
-
-        <RadioButton
-            android:id="@+id/mujerRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mujer" />
-
-        <RadioButton
-            android:id="@+id/otroRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Otro" />
-
-    </RadioGroup>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:digits="0123456789."
-        android:gravity="center"
-        android:hint="Numero telefonico"
-        android:inputType="phone"
-        android:id="@+id/NumeroTelefonoUsuario"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:digits="0123456789."
-        android:gravity="center"
-        android:hint="Fecha de ingreso"
-        android:inputType="text"
-        android:id="@+id/FechaIngresoUsuario"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:digits="0123456789."
-        android:gravity="center"
-        android:hint="Razon de ingreso"
-        android:inputType="text"
-        android:id="@+id/RazonIngreso"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Spinnersito1"/>
+        android:text="Elija su accion"
+        android:gravity="center"/>
 
 
     <TextView
@@ -119,7 +42,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/Altas"
+                android:id="@+id/Altitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulbonito"
