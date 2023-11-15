@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity4 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     Spinner contRelacionado, Psicologo;
@@ -20,6 +22,18 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
     RadioGroup genero;
     RadioButton hom,muj,otro;
     Button subir, regresar;
+    String nom,numTel,generito,fecIn,razIng,tipo,nombreP,edadsita;
+    public String generos(){
+        String cual = null;
+        if (hom.isChecked()){
+            cual = "Hombre";
+        } else if (muj.isChecked()){
+            cual = "Mujer";
+        } else if (otro.isChecked()){
+            cual = "Otro";
+        }
+        return cual;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +52,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         muj = findViewById(R.id.mujerRadioButton);
         otro = findViewById(R.id.otroRadioButton);
         subir = findViewById(R.id.Subir);
+        subir.setOnClickListener(this);
         regresar = findViewById(R.id.Regresadito);
         regresar.setOnClickListener(this);
 
@@ -65,11 +80,35 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onClick(View view) {
         String cadenita = ((Button)view).getText().toString();
-        if (cadenita.equals("Regresar")){
+        if (cadenita.equals("Regresadito")){
             Intent regreso = new Intent(this,MainActivity2.class);
         } else if (cadenita.equals("Subir")){
             BasesitaUsuarios admin = new BasesitaUsuarios(this, "administración",null,1);
             SQLiteDatabase basesita  = admin.getWritableDatabase();
+            nom = nomCo.getText().toString();
+            edadsita = edad.getText().toString();
+            generito = generos();
+            numTel = numero.getText().toString();
+            fecIn = ingreso.getText().toString();
+            razIng = ingreso.getText().toString();
+            tipo = contRelacionado.getSelectedItem().toString();
+            nombreP = Psicologo.getSelectedItem().toString();
+            if (!nom.equals("") && !generito.equals("")
+            && !numTel.equals("") && !fecIn.equals("") && !razIng.equals("")
+            && !tipo.equals("Selecciona") && !nombreP.equals("Selecciona") && !edadsita.equals("")){
+                ContentValues registrito = new ContentValues();
+                registrito.put("pNom",nom);
+                registrito.put("pEdad",edadsita);
+                registrito.put("pGen",generito);
+                registrito.put("pTel",numTel);
+                registrito.put("pFeIn",fecIn);
+                registrito.put("pRaIn",razIng);
+                registrito.put("pPNom",tipo);
+                registrito.put("pTp",nombreP);
+                basesita.insert("pacien", null, registrito);
+                basesita.close();
+                Toast.makeText(this, "agregado", Toast.LENGTH_LONG).show();
+            }else Toast.makeText(this,"INGRESA TODOS LOS DATOS", Toast.LENGTH_SHORT).show();
         }
     }
 }

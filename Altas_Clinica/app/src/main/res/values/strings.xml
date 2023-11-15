@@ -7,12 +7,14 @@
     </string-array>
 
     <string-array name="Psicologos">
+        <item>Selecciona</item>
         <item>Armando Fuentes</item>
         <item>Jorge Morales</item>
         <item>Axel Maldonado</item>
     </string-array>
 
     <string-array name="Psiquiatras">
+        <item>Selecciona</item>
         <item>Luis Frias</item>
         <item>Fernando Mendoza</item>
     </string-array>
