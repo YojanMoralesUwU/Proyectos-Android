@@ -18,11 +18,11 @@ import android.widget.Toast;
 
 public class MainActivity4 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     Spinner contRelacionado, Psicologo;
-    EditText nomCo, edad, numero, ingreso, razon;
+    EditText nomCo, edad, numero, ingreso, razon, codigo;
     RadioGroup genero;
     RadioButton hom,muj,otro;
     Button subir, regresar;
-    String nom,numTel,generito,fecIn,razIng,tipo,nombreP,edadsita;
+    String cod, nom,numTel,generito,fecIn,razIng,tipo,nombreP,edadsita;
     public String generos(){
         String cual = null;
         if (hom.isChecked()){
@@ -44,6 +44,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         Psicologo = findViewById(R.id.Spinnersito2);
         nomCo = findViewById(R.id.NombreUsuario);
         edad = findViewById(R.id.EdadUsuario);
+        codigo = findViewById(R.id.codUsuario);
         numero = findViewById(R.id.NumeroTelefonoUsuario);
         ingreso = findViewById(R.id.FechaIngresoUsuario);
         razon = findViewById(R.id.RazonIngreso);
@@ -87,6 +88,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
             BasesitaUsuarios admin = new BasesitaUsuarios(this, "administración",null,1);
             SQLiteDatabase basesita  = admin.getWritableDatabase();
             nom = nomCo.getText().toString();
+            cod = codigo.getText().toString();
             edadsita = edad.getText().toString();
             generito = generos();
             numTel = numero.getText().toString();
@@ -96,8 +98,9 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
             nombreP = Psicologo.getSelectedItem().toString();
             if (!nom.equals("") && !generito.equals("")
             && !numTel.equals("") && !fecIn.equals("") && !razIng.equals("")
-            && !tipo.equals("Selecciona") && !nombreP.equals("Selecciona") && !edadsita.equals("")){
+            && !tipo.equals("Selecciona") && !nombreP.equals("Selecciona") && !edadsita.equals("") && !cod.equals("")){
                 ContentValues registrito = new ContentValues();
+                registrito.put("pNum",cod);
                 registrito.put("pNom",nom);
                 registrito.put("pEdad",edadsita);
                 registrito.put("pGen",generito);

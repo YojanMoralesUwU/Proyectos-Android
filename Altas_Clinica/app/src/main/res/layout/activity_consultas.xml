@@ -1,17 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Consultas">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-
-  <Button
+  <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Regresote"
-      android:id="@+id/regresote"/>
+      android:gravity="center"
+      android:text="CENTRO DE AYUDA PSICOLOGICA"
+      android:textColor="@color/azulbonito"
+      android:textSize="25dp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="36dp"
+      android:gravity="center"
+      android:text="Paciente"
+      android:textSize="15dp"
+      android:textStyle="bold" />
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:hint="Ingrese codigo"
+      android:gravity="center"
+      android:id="@+id/codUsuario1"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:hint="Nombre completo"
+      android:gravity="center"
+      android:id="@+id/NombreUsuarioC"
+      android:enabled="false"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:digits="0123456789."
+      android:gravity="center"
+      android:hint="Edad"
+      android:inputType="number"
+      android:id="@+id/EdadUsuarioc"
+      android:enabled="false"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:gravity="center"
+      android:hint="Genero"
+      android:id="@+id/yen"
+      android:enabled="false"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:digits="0123456789."
+      android:gravity="center"
+      android:hint="Numero telefonico"
+      android:inputType="phone"
+      android:id="@+id/NumeroTelefonoUsuarioc"
+      android:enabled="false"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:gravity="center"
+      android:hint="Fecha de ingreso"
+      android:inputType="text"
+      android:id="@+id/FechaIngresoUsuarioc"
+      android:enabled="false"/>
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="25dp"
+      android:layout_marginEnd="25dp"
+      android:gravity="center"
+      android:hint="Razon de ingreso"
+      android:inputType="text"
+      android:id="@+id/RazonIngresoc"
+      android:enabled="false"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Tipo de doctor"
+      android:id="@+id/tipoDocc"
+      android:enabled="false"/>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Nombre doctor"
+      android:enabled="false"
+      android:id="@+id/NombreDocc"/>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="48dp" />
+
+  <Button
+      android:id="@+id/Buscar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:backgroundTint="@color/azulbonito"
+      android:gravity="center"
+      android:textColor="@color/black"
+      android:text="Buscar"/>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="53dp" />
+
+  <Button
+      android:id="@+id/regresote"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="100dp"
+      android:layout_marginEnd="100dp"
+      android:backgroundTint="@color/azulbonito"
+      android:gravity="center"
+      android:textColor="@color/black"
+      android:text="Regresote"/>
 
 </LinearLayout>
