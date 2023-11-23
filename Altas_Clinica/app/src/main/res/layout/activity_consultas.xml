@@ -100,16 +100,20 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Tipo de doctor"
-      android:id="@+id/tipoDocc"
-      android:enabled="false"/>
+      android:text="Tipo de doctor"/>
+  <Spinner
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Spinnersito1c"/>
 
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Nombre doctor"
-      android:enabled="false"
-      android:id="@+id/NombreDocc"/>
+      android:text="Nombre"/>
+  <Spinner
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Spinnersito2c"/>
 
   <TextView
       android:layout_width="match_parent"
