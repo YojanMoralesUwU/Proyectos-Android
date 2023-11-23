@@ -55,15 +55,35 @@
       android:id="@+id/EdadUsuarioc"
       android:enabled="false"/>
 
-  <EditText
+  <RadioGroup
+      android:id="@+id/generoRadioGroup"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginStart="25dp"
-      android:layout_marginEnd="25dp"
-      android:gravity="center"
-      android:hint="Genero"
-      android:id="@+id/yen"
-      android:enabled="false"/>
+      android:orientation="horizontal"
+      android:gravity="center">
+
+    <RadioButton
+        android:id="@+id/hombreRadioButtonCC"
+        android:enabled="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hombre" />
+
+    <RadioButton
+        android:id="@+id/mujerRadioButtonCC"
+        android:enabled="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mujer" />
+
+    <RadioButton
+        android:id="@+id/otroRadioButtonCC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Otro" />
+
+  </RadioGroup>
 
   <EditText
       android:layout_width="match_parent"

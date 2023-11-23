@@ -16,7 +16,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Consultas extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class Cambios extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     Button regresoo, Buscar;
     EditText codigo,nomb,edad,num,fech,raz,yen;
 
@@ -25,33 +25,39 @@ public class Consultas extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consultas);
-        cont = findViewById(R.id.Spinnersito1c);
-        sico = findViewById(R.id.Spinnersito2c);
-        regresoo = findViewById(R.id.regresote);
+        setContentView(R.layout.activity_cambios);
+        cont = findViewById(R.id.Spinnersito1cc);
+        sico = findViewById(R.id.Spinnersito2cc);
+        regresoo = findViewById(R.id.regresito);
         regresoo.setOnClickListener(this);
-        Buscar = findViewById(R.id.Buscar);
+        Buscar = findViewById(R.id.BuscaryCambiar);
         Buscar.setOnClickListener(this);
-
-        codigo = findViewById(R.id.codUsuario1);
-        nomb = findViewById(R.id.NombreUsuarioC);
-        edad = findViewById(R.id.EdadUsuarioc);
-        num = findViewById(R.id.NumeroTelefonoUsuarioc);
-        fech = findViewById(R.id.FechaIngresoUsuarioc);
-        raz = findViewById(R.id.RazonIngresoc);
-        homcc = findViewById(R.id.hombreRadioButtonCC);
-        mujcc = findViewById(R.id.mujerRadioButtonCC);
-        otrocc = findViewById(R.id.otroRadioButtonCC);
+        codigo = findViewById(R.id.codUsuario11);
+        nomb = findViewById(R.id.NombreUsuarioCc);
+        edad = findViewById(R.id.EdadUsuariocc);
+        num = findViewById(R.id.NumeroTelefonoUsuariocc);
+        fech = findViewById(R.id.FechaIngresoUsuariocc);
+        raz = findViewById(R.id.RazonIngresocc);
+        homcc = findViewById(R.id.hombreRadioButtonC);
+        mujcc = findViewById(R.id.mujerRadioButtonC);
+        otrocc = findViewById(R.id.otroRadioButtonC);
 
         ArrayAdapter unidad = ArrayAdapter.createFromResource(this, R.array.units , android.R.layout.simple_spinner_item);
         cont.setAdapter(unidad);
         cont.setOnItemSelectedListener(this);
-        cont.setEnabled(false);
-
-        sico.setEnabled(false);
-
     }
-
+    int opc;
+    public void Editar(){
+        codigo.setEnabled(false);
+        nomb.setEnabled(true);
+        edad.setEnabled(true);
+        num.setEnabled(true);
+        fech.setEnabled(true);
+        raz.setEnabled(true);
+        homcc.setEnabled(true);
+        mujcc.setEnabled(true);
+        otrocc.setEnabled(true);
+    }
     public int eleccion(String hola){
         int cual = 0;
         if (hola.equals("Psicologos")){
@@ -94,7 +100,12 @@ public class Consultas extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+
     @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
     public void onClick(View view) {
         String cadenita = ((Button)view).getText().toString();
         if (cadenita.equals("Regresote")){
@@ -110,7 +121,7 @@ public class Consultas extends AppCompatActivity implements View.OnClickListener
                 int codiguito = Integer.parseInt(codigo.getText().toString());
                 Cursor fila = basesita.rawQuery("select pNom, pEdad, pGen, pTel, pFeIn, pRaIn, pPNom, pTp from pacien where pNum ="+codiguito, null);
                 if (fila.moveToFirst()){
-
+                    Editar();
                     nomb.setText(fila.getString(0));
                     edad.setText(fila.getString(1));
                     generoCir((fila.getString(2)));
@@ -122,16 +133,16 @@ public class Consultas extends AppCompatActivity implements View.OnClickListener
                         ArrayAdapter lista = ArrayAdapter.createFromResource(this,R.array.Psicologos, android.R.layout.simple_list_item_1);
                         sico.setAdapter(lista);
                         sico.setSelection(sicologo(fila.getString(7)));
+                        opc = sicologo(fila.getString(7));
                     } else if (fila.getString(6).equals("Psiquiatras")){
                         ArrayAdapter lista2 = ArrayAdapter.createFromResource(this,R.array.Psiquiatras, android.R.layout.simple_list_item_1);
                         sico.setAdapter(lista2);
                         sico.setSelection(siquitra(fila.getString(7)));
+                        opc = siquitra(fila.getString(7));
                     }
 
-
-
-
                     mensajito= "estos son los datos";
+                    Buscar.setText("Cambios");
                     basesita.close();
                 } else{
                     mensajito = "no existe el registro";
@@ -142,17 +153,23 @@ public class Consultas extends AppCompatActivity implements View.OnClickListener
                 mensa.setPositiveButton("aceptar", null);
                 AlertDialog dialog= mensa.create();
                 dialog.show();
+            }
+        } else if (cadenita.equals("Cambios")){
+
         }
     }
-}
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
+        if (adapterView.getItemAtPosition(i).equals("Psicologos")){
+            ArrayAdapter lista = ArrayAdapter.createFromResource(this,R.array.Psicologos, android.R.layout.simple_list_item_1);
+            sico.setAdapter(lista);
+            sico.setSelection(opc);
+            opc = 0;
+        } else if (adapterView.getItemAtPosition(i).equals("Psiquiatras")){
+            ArrayAdapter lista2 = ArrayAdapter.createFromResource(this,R.array.Psiquiatras, android.R.layout.simple_list_item_1);
+            sico.setAdapter(lista2);
+            sico.setSelection(opc);
+            opc = 0;
+        }
     }
 }
