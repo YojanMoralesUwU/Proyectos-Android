@@ -47,6 +47,9 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         }else if (cadenita.equals("Cambios")){
             Intent irCambios = new Intent(this,Cambios.class);
             startActivity(irCambios);
+        } else if (cadenita.equals("Bajas")){
+            Intent irBajas = new Intent(this, Bajas.class);
+            startActivity(irBajas);
         }
     }
 }

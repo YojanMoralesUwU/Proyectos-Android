@@ -63,7 +63,19 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
 
 
     }
-
+    public void Reset(){
+        codigo.setText("");
+        nomCo.setText("");
+        edad.setText("");
+        numero.setText("");
+        ingreso.setText("");
+        razon.setText("");
+        muj.setChecked(false);
+        hom.setChecked(false);
+        otro.setChecked(false);
+        contRelacionado.setSelection(0);
+        Psicologo.setSelection(0);
+    }
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         if (adapterView.getItemAtPosition(i).equals("Psicologos")){
@@ -113,6 +125,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
                 registrito.put("pTp",nombreP);
                 basesita.insert("pacien", null, registrito);
                 basesita.close();
+                Reset();
                 Toast.makeText(this, "agregado", Toast.LENGTH_LONG).show();
             }else Toast.makeText(this,"INGRESA TODOS LOS DATOS", Toast.LENGTH_SHORT).show();
         }

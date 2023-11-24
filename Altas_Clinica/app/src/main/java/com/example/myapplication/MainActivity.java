@@ -14,9 +14,6 @@ import android.widget.Button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        psicologos = findViewById(R.id.Psicologos);
-        psicologos.setOnClickListener(this);
-
         usuarios = findViewById(R.id.Usuarios);
         usuarios.setOnClickListener(this);
 
@@ -29,9 +26,6 @@ import android.widget.Button;
             if (cadenita.equals("Usuarios")){
                 Intent cambiaraUsuarios = new Intent(this,MainActivity2.class);
                 startActivity(cambiaraUsuarios);
-            }else if (cadenita.equals("Psicologos")){
-                Intent cambiaraPsicologos = new Intent(this, MainActivity3.class);
-                startActivity(cambiaraPsicologos);
             }
         }
     }

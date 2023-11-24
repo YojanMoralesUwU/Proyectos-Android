@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="CENTRO DE AYUDA PSICOLOGICA"
+        android:textColor="@color/azulbonito"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="Paciente"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Ingrese codigo"
+        android:gravity="center"
+        android:id="@+id/codUsuario1b"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Nombre completo"
+        android:gravity="center"
+        android:id="@+id/NombreUsuarioCb"
+        android:enabled="false"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Edad"
+        android:inputType="number"
+        android:id="@+id/EdadUsuariocb"
+        android:enabled="false"/>
+
+    <RadioGroup
+        android:id="@+id/generoRadioGroupb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/hombreRadioButtonCCb"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/mujerRadioButtonCCb"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mujer" />
+
+        <RadioButton
+            android:id="@+id/otroRadioButtonCCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Otro" />
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:hint="Numero telefonico"
+        android:inputType="phone"
+        android:id="@+id/NumeroTelefonoUsuariocb"
+        android:enabled="false"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:hint="Fecha de ingreso"
+        android:inputType="text"
+        android:id="@+id/FechaIngresoUsuariocb"
+        android:enabled="false"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:hint="Razon de ingreso"
+        android:inputType="text"
+        android:id="@+id/RazonIngresocb"
+        android:enabled="false"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de doctor"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinnersito1cb"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinnersito2cb"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <Button
+        android:id="@+id/Buscarb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulbonito"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Buscar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="53dp" />
+
+    <Button
+        android:id="@+id/regresoteb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="@color/azulbonito"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Regresote"/>
+
+</LinearLayout>

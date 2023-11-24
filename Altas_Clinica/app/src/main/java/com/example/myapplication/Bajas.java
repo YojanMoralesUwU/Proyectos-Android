@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,31 +16,32 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Cambios extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class Bajas extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener  {
     Button regresoo, Buscar;
     EditText codigo,nomb,edad,num,fech,raz;
 
     Spinner cont, sico;
     RadioButton homcc, mujcc, otrocc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cambios);
-        cont = findViewById(R.id.Spinnersito1cc);
-        sico = findViewById(R.id.Spinnersito2cc);
-        regresoo = findViewById(R.id.regresito);
+        setContentView(R.layout.activity_bajas);
+        cont = findViewById(R.id.Spinnersito1cb);
+        sico = findViewById(R.id.Spinnersito2cb);
+        regresoo = findViewById(R.id.regresoteb);
         regresoo.setOnClickListener(this);
-        Buscar = findViewById(R.id.BuscaryCambiar);
+        Buscar = findViewById(R.id.Buscarb);
         Buscar.setOnClickListener(this);
-        codigo = findViewById(R.id.codUsuario11);
-        nomb = findViewById(R.id.NombreUsuarioCc);
-        edad = findViewById(R.id.EdadUsuariocc);
-        num = findViewById(R.id.NumeroTelefonoUsuariocc);
-        fech = findViewById(R.id.FechaIngresoUsuariocc);
-        raz = findViewById(R.id.RazonIngresocc);
-        homcc = findViewById(R.id.hombreRadioButtonC);
-        mujcc = findViewById(R.id.mujerRadioButtonC);
-        otrocc = findViewById(R.id.otroRadioButtonC);
+        codigo = findViewById(R.id.codUsuario1b);
+        nomb = findViewById(R.id.NombreUsuarioCb);
+        edad = findViewById(R.id.EdadUsuariocb);
+        num = findViewById(R.id.NumeroTelefonoUsuariocb);
+        fech = findViewById(R.id.FechaIngresoUsuariocb);
+        raz = findViewById(R.id.RazonIngresocb);
+        homcc = findViewById(R.id.hombreRadioButtonCCb);
+        mujcc = findViewById(R.id.mujerRadioButtonCCb);
+        otrocc = findViewById(R.id.otroRadioButtonCCb);
 
         ArrayAdapter unidad = ArrayAdapter.createFromResource(this, R.array.units , android.R.layout.simple_spinner_item);
         cont.setAdapter(unidad);
@@ -52,17 +52,22 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
     int opc;
     public void Editar(){
         codigo.setEnabled(false);
-        nomb.setEnabled(true);
-        edad.setEnabled(true);
-        num.setEnabled(true);
-        fech.setEnabled(true);
-        raz.setEnabled(true);
-        homcc.setEnabled(true);
-        mujcc.setEnabled(true);
-        otrocc.setEnabled(true);
-        sico.setEnabled(true);
-        cont.setEnabled(true);
     }
+
+    public void Reset(){
+        codigo.setText("");
+        nomb.setText("");
+        edad.setText("");
+        num.setText("");
+        fech.setText("");
+        raz.setText("");
+        mujcc.setChecked(false);
+        homcc.setChecked(false);
+        otrocc.setChecked(false);
+        cont.setSelection(0);
+        sico.setSelection(0);
+    }
+
     public void terEditar(){
         codigo.setEnabled(true);
         nomb.setEnabled(false);
@@ -73,8 +78,6 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
         homcc.setEnabled(false);
         mujcc.setEnabled(false);
         otrocc.setEnabled(false);
-        sico.setEnabled(false);
-        cont.setEnabled(false);
     }
     public int eleccion(String hola){
         int cual = 0;
@@ -130,18 +133,7 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
         return cual;
     }
 
-    public void Reset(){
-        nomb.setText("");
-        edad.setText("");
-        num.setText("");
-        fech.setText("");
-        raz.setText("");
-        mujcc.setChecked(false);
-        homcc.setChecked(false);
-        otrocc.setChecked(false);
-        cont.setSelection(0);
-        sico.setSelection(0);
-    }
+
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -183,19 +175,19 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
                     }
 
                     mensajito= "estos son los datos";
-                    Buscar.setText("Cambios");
+                    Buscar.setText("Borrar");
                     basesita.close();
                 } else{
                     mensajito = "no existe el registro";
                 }
                 AlertDialog.Builder mensa = new AlertDialog.Builder(this);
-                mensa.setTitle("hola");
+                    mensa.setTitle("Buen Dia");
                 mensa.setMessage(mensajito);
                 mensa.setPositiveButton("aceptar", null);
                 AlertDialog dialog= mensa.create();
                 dialog.show();
             }
-        } else if (cadenita.equals("Cambios")) {
+        } else if (cadenita.equals("Borrar")) {
             BasesitaUsuarios admin = new BasesitaUsuarios(this, "administracion", null, 1);
             SQLiteDatabase basesita = admin.getWritableDatabase();
             int codiguito = Integer.parseInt(codigo.getText().toString());
@@ -204,18 +196,11 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
                     && !num.getText().toString().equals("") && !fech.getText().toString().equals("") && !raz.getText().toString().equals("")
                     && !cont.getSelectedItem().toString().equals("Selecciona") && !sico.getSelectedItem().toString().equals("Selecciona") && !edad.getText().toString().equals("")) {
 
-                basesita.execSQL("UPDATE pacien SET pNom='" + nomb.getText().toString() +
-                        "', pEdad=" + edad.getText().toString() +
-                        ", pGen='" + generos() +
-                        "', pTel='" + num.getText().toString() +
-                        "', pFeIn='" + fech.getText().toString() +
-                        "', pRaIn='" + raz.getText().toString() +
-                        "', pPNom='" + cont.getSelectedItem().toString() +
-                        "', pTp='" + sico.getSelectedItem().toString() +
-                        "' WHERE pNum=" + codiguito);
+                basesita.execSQL("DELETE FROM pacien WHERE pNum=" + codiguito);
+
 
                 basesita.close();
-                Toast.makeText(this, "Editado", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Eliminado", Toast.LENGTH_LONG).show();
                 terEditar();
                 Reset();
                 Buscar.setText("Buscar");
@@ -239,4 +224,5 @@ public class Cambios extends AppCompatActivity implements AdapterView.OnItemSele
             opc = 0;
         }
     }
+
 }

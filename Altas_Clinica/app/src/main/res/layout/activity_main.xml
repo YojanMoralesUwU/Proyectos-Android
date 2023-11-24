@@ -27,22 +27,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="124dp" />
+        android:layout_height="190dp" />
 
-    <Button
-        android:id="@+id/Psicologos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:backgroundTint="@color/azulbonito"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:text="Psicologos"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="99dp" />
 
     <Button
         android:id="@+id/Usuarios"
